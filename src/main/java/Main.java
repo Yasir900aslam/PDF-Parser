@@ -1,8 +1,10 @@
+import Util.asciiArt;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        Util util = new Util();
+        asciiArt util = new asciiArt();
         Scanner in = new Scanner(System.in);
 
         String choice = "no";

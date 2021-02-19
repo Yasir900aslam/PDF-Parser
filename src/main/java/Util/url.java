@@ -1,3 +1,5 @@
+package Util;
+
 import java.util.ArrayList;
 
 public class url {
@@ -11,6 +13,8 @@ public class url {
 
     private String protienislive;
     private String wtafile;
+    private final String baseProton = "http://www.protennislive.com/posting/";
+    private final String wta = "http://wtafiles.wtatennis.com/pdf/draws/";
 
     private ArrayList<String> url;
 
@@ -20,6 +24,10 @@ public class url {
         this.composeUrl();
     }
 
+    private void composeUrl(){
+
+
+    }
     public int getLogicalYear() {
         return logicalYear;
     }
@@ -44,9 +52,7 @@ public class url {
         this.url = url;
     }
 
-    private void composeUrl(){
 
-    }
 
 
 }

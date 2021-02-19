@@ -1,3 +1,5 @@
+package Util;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
@@ -10,7 +12,7 @@ import java.awt.image.BufferedImage;
  *
  */
 
-public class Util {
+public class asciiArt {
 
     public static final int ART_SIZE_SMALL = 12;
     public static final int ART_SIZE_MEDIUM = 18;
