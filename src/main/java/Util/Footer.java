@@ -1,10 +1,17 @@
 package Util;
 
+import com.google.gson.annotations.Expose;
+
 public class Footer {
+        @Expose
         private MetaData meta;
+        @Expose
         private PrizeMoney prize;
+        @Expose
         private SeededPlayer seed;
+        @Expose
         private Alternate alter;
+        @Expose
         private Withdrawls withdrawls;
 
 

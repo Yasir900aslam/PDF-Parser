@@ -11,6 +11,7 @@ import org.apache.http.util.EntityUtils;
 
 public class ClientResponseHandler implements ResponseHandler<String> {
 
+
     @Override
     public String handleResponse(final HttpResponse httpResponse) throws ClientProtocolException, IOException {
         //Get the status of the response
@@ -22,7 +23,6 @@ public class ClientResponseHandler implements ResponseHandler<String> {
             } else {
                 return EntityUtils.toString(entity);
             }
-
         } else {
             return ""+status;
         }
