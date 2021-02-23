@@ -30,10 +30,10 @@ public class url {
         String bufproton;
         String bufwta;
         LocalDate currentdate = LocalDate.now();
-        for( ;logicalYear <= currentdate.getYear(); logicalYear++)
+        for( int i =100; i <=400; i++)
         {
-            bufproton = baseProton + logicalYear + "/"+ logicalType +"/";
-            bufwta = wta + logicalYear + "/" +logicalType +"/";
+            bufproton = baseProton + logicalYear + "/"+ i+"/"+logicalType +"/";
+            bufwta = wta + logicalYear + "/"+ (logicalYear+10) +"/"+logicalType +"/";
             url.add(bufproton);
             url.add(bufwta);
         }
