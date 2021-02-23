@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Alternate {
     private ArrayList<String> alternates;
 
-    Alternate(ArrayList<String> alternates){
+    public Alternate(ArrayList<String> alternates){
         this.alternates=alternates;
     }
 

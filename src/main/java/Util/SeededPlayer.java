@@ -4,7 +4,7 @@ public class SeededPlayer {
     private String player;
     private String rank;
 
-    SeededPlayer(String player, String rank){
+    public SeededPlayer(String player, String rank){
         this.player=player;
         this.rank=rank;
     }

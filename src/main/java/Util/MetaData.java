@@ -30,7 +30,7 @@ public class MetaData {
         this.url = url;
     }
 
-    MetaData(String type, String year, String url){
+    public MetaData(String type, String year, String url){
     this.url = url;
     this.type = type;
     this.Year= year;

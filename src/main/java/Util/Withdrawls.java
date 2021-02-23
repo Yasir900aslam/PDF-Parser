@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Withdrawls {
     private ArrayList<String> withdraw ;
 
-    Withdrawls(ArrayList<String> withdraw){
+    public Withdrawls(ArrayList<String> withdraw){
             this.withdraw = withdraw;
     }
 
