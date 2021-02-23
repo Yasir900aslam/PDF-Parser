@@ -34,17 +34,6 @@ public class Main {
             System.out.println("The default Values of:");
             System.out.println("1- Logical Year = " + logicalYear);
             System.out.println("2- Logical Type = " + logicalType);
-            System.out.println("Do you want to Change these values [yes / no] -> ");
-            in.close();
-            Scanner ina = new Scanner(System.in);
-            String userChoice = ina.nextLine();
-            if(userChoice.contentEquals("yes") || userChoice.contentEquals("Yes"))
-            {
-                System.out.println("1- Logical Year ->");
-                logicalYear = in.nextInt();
-                System.out.println("2- Logical Type ->");
-                logicalType= in.nextLine();
-            }
             System.out.println("[+] URls generated");
             url generated_urls = new url(logicalYear, logicalType);
             System.out.println("[+] Downloading files");
@@ -52,7 +41,7 @@ public class Main {
             parser pdfparser = new parser();
             System.out.println("[+] Parsing files");
             ArrayList<Footer> footerobjectlist = pdfparser.parsePDFTOString(files);
-            Serializer serializer = new Serializer();
+            Serializer serializer = new Serializer("output_download_scan.json");
             System.out.println("[+] Serializing Objects to JSON");
             serializer.to_json(footerobjectlist);
         }
@@ -64,7 +53,7 @@ public class Main {
             scanparser p = new scanparser();
             ArrayList<Footer> scanfooter =  p.parsePDFTOString(name);
             System.out.println("[+] Serializing Objects to JSON");
-            Serializer serializer = new Serializer();
+            Serializer serializer = new Serializer("output_scan.json");
             serializer.to_json(scanfooter);
         }
         else

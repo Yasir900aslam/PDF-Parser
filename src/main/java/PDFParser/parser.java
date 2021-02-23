@@ -25,20 +25,17 @@ public class parser {
             text = text.replaceAll("\\s", "");
             String[] res = text.split("[, .]", 0);
             ArrayList<String> alterl = new ArrayList<String>();
-            for (String s: res)
-            {
-                MetaData meta = new MetaData(s,s,s);
-                PrizeMoney prize = new PrizeMoney(s,s);
-                SeededPlayer seed = new SeededPlayer(s,s);
+            for (String s: res) {
+                MetaData meta = new MetaData(s, s, s);
+                PrizeMoney prize = new PrizeMoney(s, s);
+                SeededPlayer seed = new SeededPlayer(s, s);
                 alterl.add(s);
                 Alternate alter = new Alternate(alterl);
                 Withdrawls withdrawls = new Withdrawls(alterl);
-                Footer f = new Footer(meta,prize,seed,alter,withdrawls);
+                Footer f = new Footer(meta, prize, seed, alter, withdrawls);
                 footer.add(f);
             }
-
         }
-
         return footer;
     }
 }

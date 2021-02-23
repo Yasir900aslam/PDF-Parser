@@ -18,20 +18,21 @@ public class scanparser  {
         PDFTextStripper pdfStripper = new PDFTextStripper();
         //Retrieving text from PDF document
         String text = pdfStripper.getText(document);
-        text = text.substring(text.length()/2, text.length() -1);
-        text = text.replaceAll("\\s", "");
-        String[] res = text.split("[, .]", 0);
+        text = text.substring(text.length()/4, text.length() -1);
+        String[] res = text.split("\\s", 0);
         ArrayList<String> alterl = new ArrayList<String>();
-        for (String s: res)
+        for(int i =0 ; i < res.length -1 ; i++)
         {
-            MetaData meta = new MetaData(s,s,s);
-            PrizeMoney prize = new PrizeMoney(s,s);
-            SeededPlayer seed = new SeededPlayer(s,s);
-            alterl.add(s);
+            MetaData meta = new MetaData(res[i],res[i],res[i]);
+            PrizeMoney prize = new PrizeMoney(res[i],res[i]);
+            SeededPlayer seed = new SeededPlayer(res[i],res[i]);
+            alterl.add(res[i]);
+            alterl.add(res[i]);
             Alternate alter = new Alternate(alterl);
             Withdrawls withdrawls = new Withdrawls(alterl);
             Footer f = new Footer(meta,prize,seed,alter,withdrawls);
             footer.add(f);
+
         }
         return footer;
     }
