@@ -15,7 +15,7 @@ public class Footer {
         private Withdrawls withdrawls;
 
 
-    Footer(MetaData meta, PrizeMoney prize, SeededPlayer seed, Alternate alter, Withdrawls withdrawls){
+     public Footer(MetaData meta, PrizeMoney prize, SeededPlayer seed, Alternate alter, Withdrawls withdrawls){
         this.alter=alter;
         this.meta=meta;
         this.prize=prize;
