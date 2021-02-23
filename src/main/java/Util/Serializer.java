@@ -15,7 +15,7 @@ public class Serializer {
     public FileWriter file ;
 
 
-    public Serializer () throws IOException {
+    public Serializer ( String name) throws IOException {
         this.gson = new GsonBuilder()
                 .enableComplexMapKeySerialization()
                 .serializeNulls()
@@ -25,7 +25,7 @@ public class Serializer {
                 .setVersion(1.0)
                 .create();
 
-        this.file = new FileWriter("output.json");
+        this.file = new FileWriter(name);
     }
 
     public void to_json (ArrayList<Footer> footer) throws IOException {

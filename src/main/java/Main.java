@@ -35,8 +35,9 @@ public class Main {
             System.out.println("1- Logical Year = " + logicalYear);
             System.out.println("2- Logical Type = " + logicalType);
             System.out.println("Do you want to Change these values [yes / no] -> ");
-            String userChoice = in.nextLine();
-
+            in.close();
+            Scanner ina = new Scanner(System.in);
+            String userChoice = ina.nextLine();
             if(userChoice.contentEquals("yes") || userChoice.contentEquals("Yes"))
             {
                 System.out.println("1- Logical Year ->");
@@ -58,7 +59,8 @@ public class Main {
         else if (userScanChoice == 1)
         {
             System.out.println("Enter Filename to Scan: ");
-            String name = in.nextLine();
+            Scanner inb = new Scanner(System.in);
+            String name = inb.nextLine();
             scanparser p = new scanparser();
             ArrayList<Footer> scanfooter =  p.parsePDFTOString(name);
             System.out.println("[+] Serializing Objects to JSON");
@@ -70,6 +72,6 @@ public class Main {
             System.out.println("Unkown choice : Program Exiting");
             System.exit(0);
         }
-
+        in.close();
     }
 }

@@ -22,6 +22,7 @@ public class parser {
             //Retrieving text from PDF document
             String text = pdfStripper.getText(document);
             text = text.substring(text.length()/2, text.length() -1);
+            text = text.replaceAll("\\s", "");
             String[] res = text.split("[, .]", 0);
             ArrayList<String> alterl = new ArrayList<String>();
             for (String s: res)
