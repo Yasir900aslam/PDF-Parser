@@ -22,11 +22,12 @@ public class url {
     private final String baseProton = "http://www.protennislive.com/posting/";
     private final String wta = "http://wtafiles.wtatennis.com/pdf/draws/";
 
-    private ArrayList<String> url;
-
+    private ArrayList<String> url_proton;
+    private ArrayList<String> url_wta;
 
     private void composeUrl(){
-        url = new ArrayList<String>();
+        url_proton = new ArrayList<String>();
+        url_wta = new ArrayList<String>();
         String bufproton;
         String bufwta;
         LocalDate currentdate = LocalDate.now();
@@ -34,8 +35,8 @@ public class url {
         {
             bufproton = baseProton + logicalYear + "/"+ i+"/"+logicalType +"/";
             bufwta = wta + logicalYear + "/"+ (logicalYear+10) +"/"+logicalType +"/";
-            url.add(bufproton);
-            url.add(bufwta);
+            url_proton.add(bufproton);
+            url_wta.add(bufwta);
         }
     }
 
@@ -56,14 +57,19 @@ public class url {
     }
 
     public ArrayList<String> getUrl() {
-        return url;
+        return url_proton;
     }
 
     public void setUrl(ArrayList<String> url) {
-        this.url = url;
+        this.url_proton = url;
     }
 
 
+    public ArrayList<String> getUrl_wta() {
+        return url_wta;
+    }
 
-
+    public void setUrl_wta(ArrayList<String> url_wta) {
+        this.url_wta = url_wta;
+    }
 }
