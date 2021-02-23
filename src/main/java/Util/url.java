@@ -34,10 +34,10 @@ public class url {
         for( int i =100; i <=400; i++)
         {
             bufproton = baseProton + logicalYear + "/"+ i+"/"+logicalType +"/";
-            bufwta = wta + logicalYear + "/"+ (logicalYear+10) +"/"+logicalType +"/";
             url_proton.add(bufproton);
-            url_wta.add(bufwta);
         }
+        bufwta = wta + logicalYear + "/"+ (logicalYear+10) +"/"+logicalType +"/";
+        url_wta.add(bufwta);
     }
 
     public int getLogicalYear() {

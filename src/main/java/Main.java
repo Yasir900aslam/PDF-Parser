@@ -25,8 +25,6 @@ public class Main {
         int userScanChoice = in.nextInt();
         if(userScanChoice== 0)
         {
-            url u = new url(2016, "mdd.pdf");
-            System.out.println(u.getUrl());
             //Default Values
             System.out.println("The default Values of:");
             System.out.println("1- Logical Year = " + logicalYear);
