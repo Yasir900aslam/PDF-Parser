@@ -43,6 +43,7 @@ public class Main {
                 System.out.println("2- Logical Type ->");
                 logicalType= in.nextLine();
             }
+            System.out.println("[+] URls generated");
             url generated_urls = new url(logicalYear, logicalType);
             System.out.println("[+] Downloading files");
             ArrayList<String> files = HTTP.download(generated_urls.getUrl());

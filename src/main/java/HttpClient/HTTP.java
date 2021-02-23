@@ -13,24 +13,36 @@ import java.util.ArrayList;
 
 public class HTTP {
     public static ArrayList<String> download(ArrayList<String> url) throws IOException {
-        CloseableHttpClient client = HttpClientBuilder.create().build();
-        HttpGet request = new HttpGet(url);
-        HttpResponse response = client.execute(request);
-        HttpEntity entity = response.getEntity();
-        int responseCode = response.getStatusLine().getStatusCode();
-
-        if(responseCode == 200)
+        ArrayList<String> filename = new ArrayList<String>();
+        String baseFileName="src/main/java/file";
+        int i = 1;
+        for (String u : url)
         {
-            InputStream inputStream = entity.getContent();
-            FileOutputStream fos = new FileOutputStream(filename);
-            int bytee;
-            while((bytee = inputStream.read()) != -1) {
-                fos.write(bytee);
-        }
+            CloseableHttpClient client = HttpClientBuilder.create().build();
+            HttpGet request = new HttpGet(u);
+            System.out.println("[-] GETTING " + u);
+            HttpResponse response = client.execute(request);
+            HttpEntity entity = response.getEntity();
+            int responseCode = response.getStatusLine().getStatusCode();
+
+            if(responseCode == 200)
+            {
+                System.out.println("[-] Response 200 ");
+                i++;
+                String add = baseFileName+ i +".pdf";
+                InputStream inputStream = entity.getContent();
+                FileOutputStream fos = new FileOutputStream(add);
+                filename.add(add);
+                int bytee;
+                while((bytee = inputStream.read()) != -1) {
+                    fos.write(bytee);
+                }
+            }
+            else{
+                System.out.println("[-] Invalid URL ");
+            }
             client.close();
-            return responseCode;
         }
-        client.close();
-        return responseCode;
+        return filename;
     }
 }
