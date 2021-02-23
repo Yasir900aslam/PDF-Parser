@@ -1,5 +1,8 @@
 import Util.asciiArt;
+import PDFParser.parser;
+import Util.url;
 
+import javax.swing.text.html.parser.Parser;
 import java.util.Scanner;
 
 public class Main {
@@ -39,7 +42,8 @@ public class Main {
         }
         else if (userScanChoice == 1)
         {
-
+            parser p = new parser();
+            p.parsePDFTOString();
         }
         else
         {
