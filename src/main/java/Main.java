@@ -4,6 +4,7 @@ import Util.Serializer;
 import Util.asciiArt;
 import PDFParser.parser;
 import Util.url;
+import scan.scanparser;
 
 import javax.swing.text.html.parser.Parser;
 import java.util.ArrayList;
@@ -56,8 +57,13 @@ public class Main {
         }
         else if (userScanChoice == 1)
         {
-            parser p = new parser();
-            p.parsePDFTOString();
+            System.out.println("Enter Filename to Scan: ");
+            String name = in.nextLine();
+            scanparser p = new scanparser();
+            ArrayList<Footer> scanfooter =  p.parsePDFTOString(name);
+            System.out.println("[+] Serializing Objects to JSON");
+            Serializer serializer = new Serializer();
+            serializer.to_json(scanfooter);
         }
         else
         {

@@ -12,7 +12,7 @@ import java.util.Collections;
 public class parser {
 
     public ArrayList<Footer> parsePDFTOString(ArrayList<String> pathname) throws IOException {
-        ArrayList<Footer> footer = new ArrayList<Footer>();
+        ArrayList<Footer> footer = new ArrayList<>();
 
         for (String p : pathname) {
             File file = new File(p);
