@@ -9,9 +9,10 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class HTTP {
-    public static int download(String url, String filename) throws IOException {
+    public static ArrayList<String> download(ArrayList<String> url) throws IOException {
         CloseableHttpClient client = HttpClientBuilder.create().build();
         HttpGet request = new HttpGet(url);
         HttpResponse response = client.execute(request);

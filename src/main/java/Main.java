@@ -1,8 +1,12 @@
+import HttpClient.HTTP;
+import Util.Footer;
+import Util.Serializer;
 import Util.asciiArt;
 import PDFParser.parser;
 import Util.url;
 
 import javax.swing.text.html.parser.Parser;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -12,7 +16,7 @@ public class Main {
 
         String choice = "no";
         int logicalYear= 2020;
-        String logicalType = "mds";
+        String logicalType = "mds.pdf";
 
 
         System.out.println("");
@@ -39,6 +43,15 @@ public class Main {
                 System.out.println("2- Logical Type ->");
                 logicalType= in.nextLine();
             }
+            url generated_urls = new url(logicalYear, logicalType);
+            System.out.println("[+] Downloading files");
+            ArrayList<String> files = HTTP.download(generated_urls.getUrl());
+            parser pdfparser = new parser();
+            System.out.println("[+] Parsing files");
+            ArrayList<Footer> footerobjectlist = pdfparser.parsePDFTOString(files);
+            Serializer serializer = new Serializer();
+            System.out.println("[+] Serializing Objects to JSON");
+            serializer.to_json(footerobjectlist);
         }
         else if (userScanChoice == 1)
         {
